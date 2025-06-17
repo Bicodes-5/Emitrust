@@ -1,0 +1,446 @@
+@font-face {
+    font-family: 'Boulia-Demo';
+    src: url('fonts/Boulia-Demo.woff2') format('woff2'), url('fonts/Boulia-Demo.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    color: white;
+    overflow-x: hidden;
+  }
+  
+  /* Hamburger Menu Button */
+  .custom-toggle {
+    background: transparent;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5px;
+    padding: 6px;
+    cursor: pointer;
+    width: fit-content;
+  }
+  
+  .custom-toggle .line {
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s ease;
+  }
+  
+  /* First and last lines are 12px */
+  .custom-toggle .line:first-child,
+  .custom-toggle .line:last-child {
+    width: 12px;
+  }
+  
+  /* Middle line is wider */
+  .custom-toggle .middle {
+    width: 24px;
+  }
+  
+  /* Offset the last line slightly without hard margin */
+  .custom-toggle .line:last-child {
+    margin-left: clamp(6px, 1.5vw, 13px); /* Responsive left margin */
+  }
+  
+  
+  /* Navbar */
+  .navbar-toggler {
+    border: none;
+    filter: invert(1);
+  }
+  
+  .btn-login {
+    border-radius: 20px;
+  }
+  
+  /* Desktop Navbar */
+  @media (min-width: 992px) {
+    #mainMenu {
+      justify-content: flex-end;
+      margin-right: 2rem;
+      margin-left: 2rem;
+    }
+  
+    .navbar-nav .nav-item {
+      margin: 0 10px;
+    }
+  }
+  
+  /* Mobile Navbar */
+  @media (max-width: 991.98px) {
+    #mainMenu {
+      position: absolute;
+      top: 10px;
+      right: 5px;
+      background-color: #081818;
+      padding: 1rem;
+      width: 200px;
+      height: 80vh;
+      clip-path: circle(0% at 90% 0%);
+      transition: clip-path 0.5s ease-in-out, opacity 0.3s ease;
+      opacity: 0;
+      z-index: 999;
+      pointer-events: none;
+    }
+  
+    #mainMenu.open {
+      clip-path: circle(150% at 90% 0%);
+      opacity: 1;
+      pointer-events: auto;
+      border-radius: 20px;
+    }
+  
+    #mainMenu .nav-link {
+      color: #ffffff;
+      padding: 0.75rem 0;
+      display: block;
+    }
+  
+    .navbar-nav .nav-item {
+      margin: 0.5rem 0;
+    }
+  
+    .custom-toggle {
+      z-index: 1000;
+      position: relative;
+    }
+  }
+  
+  
+  /* Hero Section */
+  .hero {
+    background: url('assets/happy-university-students-using-laptop-while-sitting-hallway (1).jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 0;
+  }
+  
+  header {
+    position: relative;
+    z-index: 2;
+    padding: 1rem 2rem;
+  }
+  
+  .Brand {
+    font-weight: 300;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    font-family: Boulia-Demo, sans-serif;
+    margin-left: clamp(1rem, 5vw, 4rem);
+  }
+  
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+  
+  .brand-text {
+    color: #97CADB;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    font-family: Boulia-Demo, sans-serif;
+  }
+  
+  .Description {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    letter-spacing: 0.1em;
+    font-family: Boulia-Demo, sans-serif;
+  }
+  
+  .encourage {
+    font-size: clamp(3rem, 10vw, 6rem);
+    letter-spacing: 0.1em;
+    font-family: Boulia-Demo, sans-serif;
+    opacity: 0.1;
+  }
+  
+  .cta-btn {
+    background-color: #06AAC5;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    font-family: Boulia-Demo, sans-serif;
+  }
+  
+  .Countdown {
+    top: 80vh;
+    font-family: Boulia-Demo, sans-serif;
+  }
+  
+  .social-icons {
+    top: 80vh;
+  }
+  
+  .glass-card {
+    background: rgba(114, 150, 164, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+    color: white;
+  }
+  
+  .down {
+    margin-top: -8vh;
+  }
+  
+  /* Service Section */
+  .service-section {
+    background-color: #D9D9D9;
+    text-align: center;
+    min-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 1rem;
+  }
+  
+  .section-title {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    font-family: Boulia-Demo, sans-serif;
+    text-transform: uppercase;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    color: black;
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  .section-title::before,
+  .section-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 60px;
+    height: 1px;
+    background: #6c757d;
+  }
+  
+  .section-title::before {
+    right: 100%;
+    margin-right: 20px;
+  }
+  
+  .section-title::after {
+    left: 100%;
+    margin-left: 20px;
+  }
+  
+  .service-card {
+    width: clamp(240px, 30vw, 288px);
+    aspect-ratio: 288 / 347;
+    border-top-left-radius: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin: auto;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-top {
+    background-color: #151B28;
+    color: white;
+    padding: 4rem 1rem;
+    border-top-right-radius: 20px;
+  }
+  
+  .card-top .icon {
+    color: #7CB4C9;
+    margin-bottom: 1rem;
+  }
+  
+  .card-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    font-family: Boulia-Demo, sans-serif;
+    text-transform: uppercase;
+  }
+  
+  .card-bottom {
+    background-color: white;
+    color: #333;
+    padding: 1rem;
+    font-size: 0.85rem;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+  
+  .service-section a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* About Section */
+  .about-section {
+    background-color: #f8f9fa;
+    padding: 5rem 1rem;
+    min-height: 70vh;
+  }
+  
+  .about-section p {
+    font-size: 1.125rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Footer */
+  footer.bg-black {
+    background-color: #000 !important;
+    padding: 1rem 0;
+    min-height: 20vh;
+  }
+  
+  footer small {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+
+  
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1rem;
+    }
+  
+    .hero-content {
+      padding: 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+    }
+  
+    .brand-text {
+      font-size: clamp(2rem, 4vw, 2.2rem);
+      margin-top: 5rem;
+    }
+  
+    .Description {
+      font-size: clamp(0.625rem, 2.5vw, 1.2rem);
+    }
+  
+    .encourage {
+      font-size: clamp(1rem, 8vw, 3rem);
+      opacity: 0.08;
+    }
+  
+    .glass-card {
+      display: none;
+      background: rgba(114, 150, 164, 0.15);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+      padding: 1rem;
+      color: white;
+      max-width: 100%;
+      height: auto;
+      max-height: 180px;
+      overflow: hidden;
+      text-align: left;
+    }
+  
+    .glass-card .icon {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+  
+    .cta-btn {
+      font-size: 0.9rem;
+      padding: 0.4rem 1rem;
+    }
+  
+    .social-icons {
+      position: absolute;
+      top: 65vh;
+      right: clamp(3rem, 10vw, 4rem); /* more distance from the right edge */
+      font-size: clamp(0.75rem, 3vw, 1rem);
+      display: flex;
+      gap: clamp(0.5rem, 3vw, 1rem); /* spacing between icons */
+    }
+  
+    .social-icons i {
+      font-size: clamp(1rem, 4vw, 1.5rem); /* responsive icon sizing */
+    }
+    
+  
+    .Countdown {
+      top: 65vh;
+    }
+  
+    /* Responsive Hamburger Icon Style */
+    .custom-toggle {
+      background: transparent;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 5px;
+      padding: 6px;
+      cursor: pointer;
+      width: fit-content;
+    }
+  
+    .custom-toggle .line {
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+      transition: 0.3s ease;
+    }
+  
+    .custom-toggle .line:first-child,
+    .custom-toggle .line:last-child {
+      width: 12px;
+    }
+  
+    .custom-toggle .middle {
+      width: 24px;
+    }
+  
+    .custom-toggle .line:last-child {
+      margin-left: clamp(9px, 1.5vw, 13px); 
+    }
+  
+    .btn-login {
+      display: none !important;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+    }
+  }
+  
+  
+  
+  
